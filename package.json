@@ -16,7 +16,7 @@
     "url": "https://github.com/catalin-luntraru/redux-minimal"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 8080",
+    "start": "concurrently \"webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 8080\" \"node ./server/server.js\"",
     "build-dev": "webpack --config webpack.dev.config.js",
     "build-prod": "webpack -p --config webpack.prod.config.js",
     "test": "mocha --recursive --compilers js:babel-register --require babel-polyfill --require ignore-styles",
@@ -32,6 +32,11 @@
   "author": "Catalin Luntraru",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "nunjucks": "^3.0.0",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
